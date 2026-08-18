@@ -184,7 +184,7 @@ Password:
 
 #: Hemos conseguido una shell con privilegios de root.
 
-7. Conclusiones
+## 7. Conclusiones
 
 Durante la resolución de esta máquina utilizamos diferentes técnicas de reconocimiento, enumeración, explotación y escalada de privilegios.
 
@@ -201,15 +201,15 @@ Resumen de las técnicas utilizadas:
 10 Enumeración de permisos mediante sudo -l.
 11 Escalada de privilegios hasta root.
 12 Uso de una reverse shell como método alternativo de acceso.
-13 Flags
 
+## Flags: 
 Primera flag:mr meeseek hair
 
 Segunda flag:i jerry tear
 
 Tercera flag:fleeb juice
 
-Lecciones aprendidas: 
+## Lecciones aprendidas: 
 
 1.- Esta máquina permitió practicar el proceso completo de un pentest, desde el reconocimiento inicial 
     hasta la escalada de privilegios.
