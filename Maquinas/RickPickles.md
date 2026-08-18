@@ -22,7 +22,7 @@
 
 #: Dentro del código fuente encontramos un comentario que revela el siguiente usuario:
 
--R1ckRul3s
+- R1ckRul3s
 
 ## 2. Escaneo y enumeración
 
@@ -33,9 +33,9 @@
   gobuster dir -u http://IP -w /usr/share/wordlists/dirb/common.txt -x php,txt,js,py
 
 Parámetros utilizados
--u: especifica la URL objetivo.
--w: especifica el diccionario utilizado para realizar la enumeración.
--x: especifica extensiones de archivos que también queremos buscar.
+- u: especifica la URL objetivo.
+- w: especifica el diccionario utilizado para realizar la enumeración.
+- x: especifica extensiones de archivos que también queremos buscar.
 
 #:Durante el escaneo encontramos varios recursos interesantes:
 
@@ -51,7 +51,8 @@ Parámetros utilizados
 - Username:
 - Password:
 
-#: Ya conocemos el usuario: R1ckRul3s
+#: Ya conocemos el usuario: 
+- R1ckRul3s
 
 #: También accedemos a: http://IP/robots.txt
 
@@ -85,7 +86,8 @@ Parámetros utilizados
 
 #: Primero utilizamos el comando pwd para conocer nuestra ruta actual
 
-#: Despues colocamos el comando ls para listar el contenido de la carpeta actual 
+#: Despues colocamos el comando ls para listar el contenido de la carpeta actual
+
 #: Encontramos el archivo:
 - Sup3rS3cretPickl3Ingred.txt
 
@@ -101,7 +103,8 @@ Parámetros utilizados
 
 #: También encontramos el archivo clue.txt
 
-#: Lo visualizamos mediante: less clue.txt
+#: Lo visualizamos mediante:
+- less clue.txt
 
 #: El archivo contiene una pista que indica que debemos buscar otros ingredientes dentro del sistema de archivos.
 
@@ -112,21 +115,21 @@ Parámetros utilizados
 #: Utilizamos el comando ls / para listar los directorios principales del sistema de archivos.
 
 #: Entre ellos encontramos:
-
-  1 home  
-  2 root
+- home  
+- root
 
 #: Enumeración de /home utilizamos el comando ls /home/
 #: Encontramos dos usuarios:
+- rick
+- ubuntu
 
-  1 rick
-  2 ubuntu
-
-#: Continuamos con la enumeración del directorio del usuario rick: ls /home/rick/
+#: Continuamos con la enumeración del directorio del usuario rick:
+- ls /home/rick/
 
 #: Encontramos un archivo llamado: second ingredients
 
-#: Como el nombre contiene un espacio, debemos utilizar comillas: less /home/rick/"second ingredients"
+#: Como el nombre contiene un espacio, debemos utilizar comillas: 
+- less /home/rick/"second ingredients"
 
 #: El contenido es: i jerry tear
 
