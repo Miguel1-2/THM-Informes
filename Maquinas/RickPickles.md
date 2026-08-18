@@ -57,6 +57,7 @@ Password:
   http://<IP>/robots.txt
 
 #: Encontramos la siguiente información:
+
   Wubbalubbadubdub
 
 #: Probamos este valor como contraseña junto con el usuario encontrado anteriormente.
@@ -113,11 +114,13 @@ Password:
 #: Utilizamos el comando ls / para listar los directorios principales del sistema de archivos.
 
 #: Entre ellos encontramos:
+
   1 home  
   2 root
 
 #: Enumeración de /home utilizamos el comando ls /home/
 #: Encontramos dos usuarios:
+
   1 rick
   2 ubuntu
 
@@ -131,7 +134,7 @@ Password:
 
 #: Esta corresponde a la segunda flag.
 
-### 6. Escalada de privilegios
+## 6. Escalada de privilegios
 
 #: Para encontrar la última flag debemos acceder al directorio: /root
 
@@ -147,11 +150,11 @@ Password:
 
 #: Ahora podemos visualizarlo utilizando: sudo less /root/3rd.txt
 
-# Obtenemos: fleeb juice
+#: Obtenemos: fleeb juice
 
 #: Esta corresponde a la tercera flag.
 
-### Escalada mediante una shell
+## Escalada mediante una shell
 
 #: También podemos conseguir una shell interactiva y posteriormente realizar la escalada.
 
