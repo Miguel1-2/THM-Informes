@@ -10,17 +10,19 @@
 
 #:El escaneo nos permite identificar los siguientes puertos abiertos:
 
-Puerto: 22, 80
-Servicios : http y ssh
-Descripción: ssh (secure shell), http(hypertext transfer protocol)
+- Puerto: 22, 80
+- Servicios : http y ssh
+- Descripción: ssh (secure shell), http(hypertext transfer protocol)
 
 #:Al encontrar el puerto 80/tcp abierto, podemos acceder al servidor web desde el navegador utilizando:
 
-http://IP/
+- http://IP/
 
 #: Al revisar la página web, encontramos una imagen y decidimos inspeccionar el código fuente.
 
-#: Dentro del código fuente encontramos un comentario que revela el siguiente usuario: R1ckRul3s
+#: Dentro del código fuente encontramos un comentario que revela el siguiente usuario:
+
+-R1ckRul3s
 
 ## 2. Escaneo y enumeración
 
@@ -37,23 +39,25 @@ Parámetros utilizados
 
 #:Durante el escaneo encontramos varios recursos interesantes:
 
-1 /assets/
-2 login.php
-3 robots.txt
+- /assets/
+- login.php
+- robots.txt
 
 #: Accedemos a:
   http://IP/login.php
 
 #: Encontramos un formulario de autenticación que solicita:
 
-Username:
-Password:
+- Username:
+- Password:
 
 #: Ya conocemos el usuario: R1ckRul3s
 
 #: También accedemos a: http://IP/robots.txt
 
-#: Encontramos la siguiente información: Wubbalubbadubdub
+#: Encontramos la siguiente información: 
+
+- Wubbalubbadubdub
 
 #: Probamos este valor como contraseña junto con el usuario encontrado anteriormente.
 
@@ -72,8 +76,8 @@ Password:
 #: También podemos utilizar ls para listar el contenido donde nos encontramos
 
 #: Durante esta enumeración encontramos:
-  1 Sup3rS3cretPickl3Ingred.txt
-  2 clue.txt
+- Sup3rS3cretPickl3Ingred.txt
+- clue.txt
 
 ## 4. Explotación: 
 
@@ -83,12 +87,12 @@ Password:
 
 #: Despues colocamos el comando ls para listar el contenido de la carpeta actual 
 #: Encontramos el archivo:
-  Sup3rS3cretPickl3Ingred.txt
+- Sup3rS3cretPickl3Ingred.txt
 
 #: Intentamos visualizarlo utilizando diferentes comandos.
 
 #: cat y more no funcionan correctamente en este entorno, por lo que utilizamos:
-  less Sup3rS3cretPickl3Ingred.txt
+- less Sup3rS3cretPickl3Ingred.txt
 
 #: Obtenemos: mr meeseek hair
 
@@ -183,25 +187,25 @@ Password:
 Durante la resolución de esta máquina utilizamos diferentes técnicas de reconocimiento, enumeración, explotación y escalada de privilegios.
 
 Resumen de las técnicas utilizadas: 
-1 Enumeración de puertos con Nmap.
-2 Enumeración web.
-3 Descubrimiento de archivos y directorios con Gobuster.
-4 Análisis del código fuente.
-5 Enumeración de robots.txt.
-6 Obtención de credenciales.
-7 Ejecución de comandos mediante el Command Panel.
-8 Enumeración del sistema de archivos.
-9 Obtención de las flags.
-10 Enumeración de permisos mediante sudo -l.
-11 Escalada de privilegios hasta root.
-12 Uso de una reverse shell como método alternativo de acceso.
+- Enumeración de puertos con Nmap.
+- Enumeración web.
+- Descubrimiento de archivos y directorios con Gobuster.
+- Análisis del código fuente.
+- Enumeración de robots.txt.
+- Obtención de credenciales.
+- Ejecución de comandos mediante el Command Panel.
+- Enumeración del sistema de archivos.
+- Obtención de las flags.
+-  Enumeración de permisos mediante sudo -l.
+-  Escalada de privilegios hasta root.
+- Uso de una reverse shell como método alternativo de acceso.
 
 ## Flags: 
-Primera flag:mr meeseek hair
+- Primera flag:mr meeseek hair
 
-Segunda flag:i jerry tear
+- Segunda flag:i jerry tear
 
-Tercera flag:fleeb juice
+- Tercera flag:fleeb juice
 
 ## Lecciones aprendidas: 
 
@@ -216,10 +220,10 @@ Tercera flag:fleeb juice
     incorrecta puede permitir que un usuario con pocos privilegios ejecute comandos como root.
 
 ## Herramientas utilizadas
-1 Nmap
-2 Gobuster
-3 Netcat
-4 Navegador web
-5 Linux terminal
+- Nmap
+-  Gobuster
+-  Netcat
+-  Navegador web
+-  Linux terminal
 
 
